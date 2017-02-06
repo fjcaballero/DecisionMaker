@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Decision Maker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Angular -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        
+        <!-- Polyfill -->
+	    <script src="webcomponentsjs/webcomponents-lite.min.js"></script>
+
+        <!-- Polymer dependencies -->
+        <link rel="import" href="sortable-list/sortable-list.html">
+        <link rel="import" href="paper-button/paper-button.html">
+
+        <link href="css/style.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <template is="dom-bind" id="maker">
+            <label for="decision">Enter your decision</label>
+            <input name="decision" value="{{decision::input}}">
+            <h1>{{decision}}</h1>
+            <div class="list">
+                <div class="pros">
+                    <h3>Pros</h3>
+                    <input value="{{pro::input}}" on-keydown="proCheck">
+                    <sortable-list>
+                        <template is="dom-repeat" items="{{pros}}">
+                            <div class="pro">{{item}}</div>
+                        </template>
+                    </sortable-list>
+                </div>
+                <div class="cons">
+                    <h3>Cons</h3>
+                    <input value="{{con::input}}" on-keydown="conCheck">
+                    <sortable-list>
+                        <template is="dom-repeat" items="{{cons}}">
+                            <div class="con">{{item}}</div>
+                        </template>
+                    </sortable-list>
+                </div>
+            </div>
+            <paper-button class="indigo" raised on-click="doMaths">Calculate</paper-button>
+            <h1>{{result}}</h1>
+            <script>
+                maker.pros = [];
+                maker.cons = [];
+                maker.proCheck = function(e){
+                    if (e.keyCode === 13) {
+                        maker.push('pros', maker.pro);
+                    }
+                };
+
+                maker.conCheck = function(e){
+                    if (e.keyCode === 13) {
+                        maker.push('cons', maker.con);
+                    }
+                };
+
+                maker.doMaths = function(){
+                    maker.result = "Just do it!";
+                }
+
+            </script>
+        </template>
+    </body>
+</html>

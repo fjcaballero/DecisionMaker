@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list{
+    flex-direction: row;
+}
+
+.pros, .cons{
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 23px;
+    margin-left: 30px;
+}
+
+.pros{
+    color: green;
+}
+
+.cons{
+    color: red;
+}
+
+.pro, .con{
+    margin-top: 15px;
+}
+
+paper-button.indigo {
+    margin-top: 30px;
+    background-color: #3f51b5;
+    color: white;
+}
