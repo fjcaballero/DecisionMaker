@@ -1,0 +1,21 @@
+{
+  "name": "decisionmaker",
+  "version": "1.0.0",
+  "description": "Helps you to make decisions. Pretty obvious.",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjcaballero/DecisionMaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fjcaballero/DecisionMaker/issues"
+  },
+  "homepage": "https://github.com/fjcaballero/DecisionMaker#readme"
+}
